@@ -10,11 +10,11 @@
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     </PropertyGroup>
     <PropertyGroup Label="NuGet">
-        <Authors>ppy Pty Ltd &amp; flibitijibibo</Authors>
+        <Authors>bagnz0r, ppy Pty Ltd, flibitijibibo</Authors>
         <Title>SDL2#</Title>
-        <PackageId>ppy.SDL2-CS</PackageId>
-        <PackageProjectUrl>https://github.com/ppy/SDL2-CS</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/ppy/SDL2-CS</RepositoryUrl>
+        <PackageId>bagnz0r.SDL2-CS</PackageId>
+        <PackageProjectUrl>https://github.com/philipbutkiewicz/SDL2-CS</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/philipbutkiewicz/SDL2-CS</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
         <Content Include="$(MSBuildThisFileDirectory)native\win-x64\SDL2.dll">

@@ -15,9 +15,9 @@
         <PackageId>bagnz0r.SDL2-CS</PackageId>
         <PackageProjectUrl>https://github.com/philipbutkiewicz/SDL2-CS</PackageProjectUrl>
         <RepositoryUrl>https://github.com/philipbutkiewicz/SDL2-CS</RepositoryUrl>
-        <Version>1.0.1</Version>
-        <AssemblyVersion>1.0.1</AssemblyVersion>
-        <FileVersion>1.0.1</FileVersion>
+        <Version>1.0.2</Version>
+        <AssemblyVersion>1.0.2</AssemblyVersion>
+        <FileVersion>1.0.2</FileVersion>
     </PropertyGroup>
     <ItemGroup>
       <None Remove="native\win-x64\libfreetype-6.dll" />
@@ -63,28 +63,40 @@
             <PackagePath>runtimes/linux-x86/native</PackagePath>
             <Pack>true</Pack>
         </Content>
+        <Content Include="native\win-x64\libfreetype-6.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>runtimes/win-x64/native</PackagePath>
+            <Pack>True</Pack>
+        </Content>
+        <Content Include="native\win-x64\SDL2_ttf.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>runtimes/win-x64/native</PackagePath>
+            <Pack>True</Pack>
+        </Content>
+        <Content Include="native\win-x64\zlib1.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>runtimes/win-x64/native</PackagePath>
+            <Pack>True</Pack>
+        </Content>
+        <Content Include="native\win-x86\libfreetype-6.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>runtimes/win-x86/native</PackagePath>
+            <Pack>True</Pack>
+        </Content>
+        <Content Include="native\win-x86\SDL2_ttf.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>runtimes/win-x86/native</PackagePath>
+            <Pack>True</Pack>
+        </Content>
+        <Content Include="native\win-x86\zlib1.dll">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <PackagePath>runtimes/win-x86/native</PackagePath>
+            <Pack>True</Pack>
+        </Content>
     </ItemGroup>
     <ItemGroup>
         <Content Include="app.config">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="native\win-x64\libfreetype-6.dll">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="native\win-x64\SDL2_ttf.dll">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="native\win-x64\zlib1.dll">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="native\win-x86\libfreetype-6.dll">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="native\win-x86\SDL2_ttf.dll">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="native\win-x86\zlib1.dll">
-          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 </Project>

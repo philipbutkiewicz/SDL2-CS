@@ -17,6 +17,14 @@
         <RepositoryUrl>https://github.com/philipbutkiewicz/SDL2-CS</RepositoryUrl>
     </PropertyGroup>
     <ItemGroup>
+      <None Remove="native\win-x64\libfreetype-6.dll" />
+      <None Remove="native\win-x64\SDL2_ttf.dll" />
+      <None Remove="native\win-x64\zlib1.dll" />
+      <None Remove="native\win-x86\libfreetype-6.dll" />
+      <None Remove="native\win-x86\SDL2_ttf.dll" />
+      <None Remove="native\win-x86\zlib1.dll" />
+    </ItemGroup>
+    <ItemGroup>
         <Content Include="$(MSBuildThisFileDirectory)native\win-x64\SDL2.dll">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <PackagePath>runtimes/win-x64/native</PackagePath>
@@ -56,6 +64,24 @@
     <ItemGroup>
         <Content Include="app.config">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="native\win-x64\libfreetype-6.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="native\win-x64\SDL2_ttf.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="native\win-x64\zlib1.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="native\win-x86\libfreetype-6.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="native\win-x86\SDL2_ttf.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <Content Include="native\win-x86\zlib1.dll">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
     </ItemGroup>
 </Project>

@@ -49,8 +49,8 @@ namespace SDL2
 		 * program!
 		 */
 		public const int SDL_TTF_MAJOR_VERSION =	2;
-		public const int SDL_TTF_MINOR_VERSION =	0;
-		public const int SDL_TTF_PATCHLEVEL =		16;
+		public const int SDL_TTF_MINOR_VERSION =	20;
+		public const int SDL_TTF_PATCHLEVEL =		0;
 
 		public const int UNICODE_BOM_NATIVE =	0xFEFF;
 		public const int UNICODE_BOM_SWAPPED =	0xFFFE;
@@ -171,6 +171,10 @@ namespace SDL2
 		/* font refers to a TTF_Font* */
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
 		public static extern int TTF_GetFontOutline(IntPtr font);
+
+		/* font refers to a TTF_Font* */
+		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
+		public static extern void TTF_SetFontWrappedAlign(IntPtr font, int align);
 
 		/* font refers to a TTF_Font* */
 		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
@@ -417,6 +421,52 @@ namespace SDL2
 			[In()] [MarshalAs(UnmanagedType.LPWStr)]
 				string text,
 			SDL.SDL_Color fg
+		);
+
+		/* IntPtr refers to an SDL_Surface*, font to a TTF_Font* */
+		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr TTF_RenderText_LCD(
+			IntPtr font,
+			[In()] [MarshalAs(UnmanagedType.LPStr)]
+				string text,
+			SDL.SDL_Color fg,
+			SDL.SDL_Color bg
+		);
+
+		/* IntPtr refers to an SDL_Surface*, font to a TTF_Font* */
+		[DllImport(nativeLibName, EntryPoint = "TTF_RenderUTF8_LCD", CallingConvention = CallingConvention.Cdecl)]
+		private static extern unsafe IntPtr INTERNAL_TTF_RenderUTF8_LCD(
+			IntPtr font,
+			byte* text,
+			SDL.SDL_Color fg,
+			SDL.SDL_Color bg
+		);
+		public static unsafe IntPtr TTF_RenderUTF8_LCD(
+			IntPtr font,
+			string text,
+			SDL.SDL_Color fg,
+			SDL.SDL_Color bg
+		)
+		{
+			byte* utf8Text = SDL.Utf8EncodeHeap(text);
+			IntPtr result = INTERNAL_TTF_RenderUTF8_LCD(
+				font,
+				utf8Text,
+				fg,
+				bg
+			);
+			Marshal.FreeHGlobal((IntPtr)utf8Text);
+			return result;
+		}
+
+		/* IntPtr refers to an SDL_Surface*, font to a TTF_Font* */
+		[DllImport(nativeLibName, CallingConvention = CallingConvention.Cdecl)]
+		public static extern IntPtr TTF_RenderUNICODE_LCD(
+			IntPtr font,
+			[In()] [MarshalAs(UnmanagedType.LPWStr)]
+				string text,
+			SDL.SDL_Color fg,
+			SDL.SDL_Color bg
 		);
 
 		/* IntPtr refers to an SDL_Surface*, font to a TTF_Font*

@@ -15,9 +15,9 @@
         <PackageId>bagnz0r.SDL2-CS</PackageId>
         <PackageProjectUrl>https://github.com/philipbutkiewicz/SDL2-CS</PackageProjectUrl>
         <RepositoryUrl>https://github.com/philipbutkiewicz/SDL2-CS</RepositoryUrl>
-        <Version>1.0.2</Version>
-        <AssemblyVersion>1.0.2</AssemblyVersion>
-        <FileVersion>1.0.2</FileVersion>
+        <Version>1.0.4</Version>
+        <AssemblyVersion>1.0.4</AssemblyVersion>
+        <FileVersion>1.0.5</FileVersion>
     </PropertyGroup>
     <ItemGroup>
       <None Remove="native\win-x64\libfreetype-6.dll" />
